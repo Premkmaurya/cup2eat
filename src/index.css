@@ -27,10 +27,11 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: #123D32;
-    letter-spacing: -0.02em;
+  /* Editorial display headings with Fraunces serif */
+  h1, h2, .font-serif-editorial {
+    font-family: 'Fraunces', 'Newsreader', Georgia, serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.025em;
   }
 
   /* Custom high-craft focus ring */
@@ -40,62 +41,56 @@
     border-radius: 4px;
   }
 
-  /* Custom subtle scrollbar */
+  /* Refined scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
   }
   ::-webkit-scrollbar-track {
     background: #F7F3E8;
   }
   ::-webkit-scrollbar-thumb {
     background: #D6A84F;
-    border-radius: 4px;
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #B88B35;
+    background: #B58732;
   }
 }
 
 @layer utilities {
-  .text-fluid-display {
-    font-size: clamp(2.75rem, 5.5vw + 0.5rem, 4.5rem);
-    line-height: 1.06;
+  .text-editorial-hero {
+    font-size: clamp(2.75rem, 5.8vw + 0.5rem, 5.25rem);
+    line-height: 1.04;
     letter-spacing: -0.03em;
   }
 
-  .text-fluid-h1 {
-    font-size: clamp(2.25rem, 4.2vw + 0.5rem, 3.75rem);
-    line-height: 1.1;
+  .text-editorial-h2 {
+    font-size: clamp(2.15rem, 3.8vw + 0.4rem, 3.5rem);
+    line-height: 1.08;
     letter-spacing: -0.025em;
   }
 
-  .text-fluid-h2 {
-    font-size: clamp(1.85rem, 3vw + 0.5rem, 2.75rem);
-    line-height: 1.16;
+  .text-editorial-h3 {
+    font-size: clamp(1.4rem, 2vw + 0.3rem, 2rem);
+    line-height: 1.2;
     letter-spacing: -0.02em;
   }
 
-  .text-fluid-h3 {
-    font-size: clamp(1.35rem, 1.8vw + 0.3rem, 1.85rem);
-    line-height: 1.25;
-    letter-spacing: -0.015em;
-  }
-
   .text-measure {
-    max-width: 65ch;
+    max-width: 62ch;
   }
 }
 
-/* Texture pattern overlay for tactile organic biscuit wafer feel */
-.wafer-pattern {
-  background-image: radial-gradient(#D6A84F 0.75px, transparent 0.75px), radial-gradient(#D6A84F 0.75px, #F7F3E8 0.75px);
-  background-size: 28px 28px;
-  background-position: 0 0, 14px 14px;
-  opacity: 0.15;
+/* Subtle vintage botanical paper texture */
+.paper-grain {
+  background-image: radial-gradient(#123D32 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  opacity: 0.05;
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #D6A84F 0%, #E5C075 50%, #B88B35 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Subtle image frame treatment */
+.editorial-frame {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -12px rgba(18, 61, 50, 0.15);
 }

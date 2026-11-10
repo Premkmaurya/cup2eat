@@ -1,5 +1,4 @@
-import { ArrowDown, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
-import { EdibleCupVisual } from './EdibleCupVisual';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   onExploreCups: () => void;
@@ -8,101 +7,105 @@ interface HeroProps {
 
 export const Hero = ({ onExploreCups, onBusinessEnquiry }: HeroProps) => {
   return (
-    <section 
-      id="hero" 
-      className="relative min-h-[92vh] lg:min-h-screen pt-28 sm:pt-32 pb-16 lg:pb-24 flex items-center overflow-hidden"
-    >
-      {/* Background Organic Ambient Accents */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-[350px] h-[350px] bg-forest/5 rounded-full blur-3xl pointer-events-none -z-10" />
+    <section className="relative min-h-[92vh] lg:min-h-screen pt-32 pb-16 lg:pb-24 flex items-center overflow-hidden bg-cream">
+      
+      {/* Subtle organic paper grain overlay */}
+      <div className="absolute inset-0 paper-grain pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Asymmetric Editorial Copy & CTAs */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-6 sm:space-y-8">
+          {/* Left Column: Expressive Editorial Copy & Direct CTAs */}
+          <div className="lg:col-span-6 flex flex-col justify-center text-left space-y-7">
             
-            {/* Small Brand Label */}
-            <div className="inline-flex items-center gap-2 self-start bg-cream-muted/80 border border-gold/30 px-3.5 py-1.5 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-terracotta" />
-              <span className="text-xs font-heading font-semibold tracking-wider text-forest uppercase">
-                Edible Cups · A Different Way to Drink
+            {/* Minimal Brand Label */}
+            <div className="inline-flex items-center gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-forest" />
+              <span className="text-xs font-heading font-semibold tracking-[0.2em] uppercase text-forest/75">
+                Edible Drinkware Innovation
               </span>
             </div>
 
-            {/* Large Editorial Headline */}
-            <h1 className="text-fluid-display font-heading font-extrabold text-forest tracking-tight leading-[1.05]">
-              A cup worth <br className="hidden sm:inline" />
-              <span className="relative inline-block">
-                finishing.
-                {/* Handcrafted warm underline highlight */}
-                <svg
-                  className="absolute left-0 -bottom-2 w-full h-3 text-gold/60 pointer-events-none"
-                  viewBox="0 0 200 12"
-                  fill="none"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M3 8 C50 2, 150 2, 197 7"
-                    stroke="currentColor"
-                    strokeWidth="3.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
+            {/* Oversized Expressive Serif Headline */}
+            <h1 className="text-editorial-hero font-serif font-normal text-forest leading-[1.03] tracking-tight">
+              A cup that <br />
+              <span className="italic font-normal">doesn’t end</span> <br />
+              in the bin.
             </h1>
 
-            {/* Supporting Description */}
-            <p className="text-base sm:text-lg lg:text-xl text-charcoal/85 leading-relaxed text-measure font-normal">
-              Meet edible cups that turn your everyday drinking experience into something you can enjoy right to the last bite.
+            {/* Concise Supporting Copy */}
+            <p className="text-base sm:text-lg text-charcoal/85 leading-relaxed text-measure font-normal">
+              Meet CUP2EAT. A different way to enjoy your drink, right down to the last bite.
             </p>
 
-            {/* Short Tagline */}
-            <div className="flex items-center gap-3 pt-1">
-              <span className="h-px w-8 bg-gold" />
-              <p className="font-heading font-medium text-sm tracking-wide text-forest-light italic">
-                “Sip it. Enjoy it. Eat it.”
-              </p>
-            </div>
-
-            {/* Primary & Secondary CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
               <button
                 type="button"
                 onClick={onExploreCups}
-                className="inline-flex items-center justify-center gap-3 bg-forest text-cream hover:bg-forest-light px-7 py-3.5 rounded-full text-sm font-heading font-semibold transition-all duration-300 shadow-warm-md hover:shadow-warm-lg group focus-visible:ring-2 focus-visible:ring-gold"
+                className="inline-flex items-center justify-center gap-3 bg-forest text-cream-soft hover:bg-forest-light px-8 py-4 rounded-full text-sm font-heading font-semibold tracking-wide transition-all duration-300 shadow-warm-md hover:shadow-warm-lg group"
               >
                 <span>Explore Our Cups</span>
-                <ArrowDown className="w-4 h-4 text-gold-light group-hover:translate-y-0.5 transition-transform" />
+                <ArrowDown className="w-4 h-4 text-gold group-hover:translate-y-0.5 transition-transform" />
               </button>
 
               <button
                 type="button"
                 onClick={onBusinessEnquiry}
-                className="inline-flex items-center justify-center gap-2 bg-transparent text-forest hover:bg-cream-muted/60 border border-forest/30 hover:border-forest px-6 py-3.5 rounded-full text-sm font-heading font-semibold transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-transparent text-forest hover:bg-cream-muted/60 border border-forest/30 hover:border-forest px-7 py-4 rounded-full text-sm font-heading font-semibold tracking-wide transition-all duration-300"
               >
                 <span>Business Enquiries</span>
                 <ArrowRight className="w-4 h-4 text-forest" />
               </button>
             </div>
 
-            {/* Factual Trust & Real-world Attributes */}
-            <div className="pt-4 border-t border-cream-border/70 flex flex-wrap items-center gap-6 text-xs text-charcoal/75">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-forest" />
-                <span>Food Safety & FSSAI Compliant</span>
+            {/* Subdued Editorial Footnote */}
+            <div className="pt-6 border-t border-cream-border/70 flex items-center gap-8 text-xs font-heading text-charcoal/65">
+              <div>
+                <span className="block font-serif font-bold text-base text-forest">100%</span>
+                <span>Edible Wafer Vessel</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-gold-dark" />
-                <span>Zero Disposable Plastic Waste</span>
+              <div className="h-6 w-px bg-cream-border" />
+              <div>
+                <span className="block font-serif font-bold text-base text-forest">40+ Mins</span>
+                <span>Hot Beverage Resistance</span>
+              </div>
+              <div className="h-6 w-px bg-cream-border" />
+              <div>
+                <span className="block font-serif font-bold text-base text-forest">Zero</span>
+                <span>Disposable Trash</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Hero Edible Cup Visual */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <EdibleCupVisual className="w-full max-w-md" />
+          {/* Right Column: Hero Product Photography Campaign Image */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-lg lg:max-w-none">
+              
+              {/* Main Product Photography Container with Warm Studio Lighting */}
+              <div className="relative rounded-3xl overflow-hidden editorial-frame bg-cream-muted/50 border border-cream-border">
+                <img
+                  src="/images/hero-edible-cup.jpg"
+                  alt="CUP2EAT Edible Cup with roasted coffee beans on warm natural ground"
+                  className="w-full h-[440px] sm:h-[540px] lg:h-[620px] object-cover object-center transition-transform duration-700 hover:scale-105"
+                  loading="eager"
+                />
+
+                {/* Subtle bottom vignette to ground the image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-deep/20 via-transparent to-transparent pointer-events-none" />
+
+                {/* Editorial Corner Plate */}
+                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-heading bg-cream-soft/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-cream-border shadow-warm-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-terracotta" />
+                    <span className="font-semibold text-forest">Original Baked Edition</span>
+                  </div>
+                  <span className="text-charcoal/60">Crisp grain wafer & chocolate lip</span>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>

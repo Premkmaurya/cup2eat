@@ -1,20 +1,13 @@
-import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { BrandIntro } from './components/BrandIntro';
-import { ProductShowcase } from './components/ProductShowcase';
-import { HowItWorks } from './components/HowItWorks';
-import { WhyCup2Eat } from './components/WhyCup2Eat';
-import { WhereItFits } from './components/WhereItFits';
-import { CustomerExperiences } from './components/CustomerExperiences';
-import { QualitySection } from './components/QualitySection';
-import { BusinessEnquiry } from './components/BusinessEnquiry';
-import { FinalCTA } from './components/FinalCTA';
-import { Footer } from './components/Footer';
+import { ProductStory } from './components/ProductStory';
+import { TheExperience } from './components/TheExperience';
+import { WhereItBelongs } from './components/WhereItBelongs';
+import { RealWorldProof } from './components/RealWorldProof';
+import { BusinessPartnerships } from './components/BusinessPartnerships';
+import { BrandClosing } from './components/BrandClosing';
 
 export function App() {
-  const [selectedProductForEnquiry, setSelectedProductForEnquiry] = useState<string>('');
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -22,55 +15,36 @@ export function App() {
     }
   };
 
-  const handleProductEnquiry = (productName?: string) => {
-    if (productName) {
-      setSelectedProductForEnquiry(productName);
-    }
-    scrollToSection('business-enquiry');
-  };
-
   return (
     <div className="min-h-screen bg-cream text-charcoal flex flex-col selection:bg-gold/30 selection:text-forest">
-      {/* 01 Navigation */}
-      <Navbar onQuoteClick={() => scrollToSection('business-enquiry')} />
+      {/* Editorial Navigation */}
+      <Navbar onQuoteClick={() => scrollToSection('business')} />
 
       <main className="flex-grow">
-        {/* 02 Hero Section */}
+        {/* 01. Immersive Hero */}
         <Hero
-          onExploreCups={() => scrollToSection('product')}
-          onBusinessEnquiry={() => scrollToSection('business-enquiry')}
+          onExploreCups={() => scrollToSection('story')}
+          onBusinessEnquiry={() => scrollToSection('business')}
         />
 
-        {/* 03 Brand Introduction */}
-        <BrandIntro />
+        {/* 02. Product Story */}
+        <ProductStory onLearnMore={() => scrollToSection('venues')} />
 
-        {/* 04 Product Showcase */}
-        <ProductShowcase onEnquire={handleProductEnquiry} />
+        {/* 03. The Experience (Pour -> Sip -> Eat) */}
+        <TheExperience />
 
-        {/* 05 How It Works */}
-        <HowItWorks />
+        {/* 04. Where It Belongs (Real-World Applications) */}
+        <WhereItBelongs onContactClick={() => scrollToSection('business')} />
 
-        {/* 06 Why CUP2EAT */}
-        <WhyCup2Eat />
+        {/* 05. Real People (Real-world proof & Instagram Reels) */}
+        <RealWorldProof />
 
-        {/* 07 Where CUP2EAT Fits (B2B) */}
-        <WhereItFits onExploreBusiness={() => scrollToSection('business-enquiry')} />
+        {/* 06. Business Partnerships & Enquiry */}
+        <BusinessPartnerships />
 
-        {/* 08 Customer Experiences & Social Verification */}
-        <CustomerExperiences />
-
-        {/* 09 Quality and Safety */}
-        <QualitySection />
-
-        {/* 10 Business Enquiry Form */}
-        <BusinessEnquiry initialProductName={selectedProductForEnquiry} />
-
-        {/* 11 Final CTA */}
-        <FinalCTA onContactClick={() => scrollToSection('business-enquiry')} />
+        {/* 07. Brand Closing Statement & Ironhill-style Framed Footer */}
+        <BrandClosing onContactClick={() => scrollToSection('business')} />
       </main>
-
-      {/* 12 Footer */}
-      <Footer />
     </div>
   );
 }
