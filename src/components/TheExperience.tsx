@@ -19,8 +19,8 @@ export const TheExperience = () => {
       title: 'Sip',
       headline: 'Savor every sip at your pace.',
       description: 'Take your time. The cup remains crisp, cool to the touch, and leak-free for up to 40 minutes, ensuring your beverage tastes exactly as the barista crafted it without cardboard aftertaste.',
-      image: '/images/cafe-table-pour.jpg',
-      alt: 'Coffee served in CUP2EAT edible cup resting on an outdoor wooden table',
+      image: '/images/experience-sip.jpg',
+      alt: 'Guest enjoying a warm sip from the CUP2EAT edible cup in a sunlit café',
       caption: 'Stage 02 · Beverage Leisure',
     },
     {
@@ -28,8 +28,8 @@ export const TheExperience = () => {
       title: 'Eat',
       headline: 'Enjoy the crispy wafer finish.',
       description: 'Once you take your last sip, your cup transforms into a snack. Enjoy the crunchy, lightly toasted grain wafer and chocolate rim. No bin required. No single-use packaging left behind.',
-      image: '/images/product-story-cup.jpg',
-      alt: 'Crisp waffle texture and chocolate rim ready to be eaten',
+      image: '/images/experience-eat.jpg',
+      alt: 'Clean bite taken out of the chocolate-lined edible cup rim, revealing the delicious crispy baked biscuit layers',
       caption: 'Stage 03 · The Delicious Ending',
     },
   ];

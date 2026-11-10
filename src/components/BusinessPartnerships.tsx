@@ -77,8 +77,8 @@ Notes: ${formData.message || 'Looking forward to discussing sample boxes & bulk 
             {/* Editorial Magazine Print Visual Frame */}
             <div className="rounded-3xl overflow-hidden editorial-frame border border-cream-border bg-cream relative">
               <img
-                src="/images/editorial-table.jpg"
-                alt="Editorial print layout: From Nature to Table"
+                src="/images/business-cafe-serve.jpg"
+                alt="Edible cup cortado served on a wooden saucer at a specialty café espresso bar"
                 className="w-full h-[280px] sm:h-[320px] object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-transparent pointer-events-none" />

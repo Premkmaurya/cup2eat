@@ -11,9 +11,9 @@ export const BrandClosing = ({ onContactClick }: BrandClosingProps) => {
   };
 
   return (
-    <section className="bg-cream pt-12 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-12">
+    <section className="bg-cream">
       {/* Large Framed Forest Green Card Inspired by Ironhill Reference */}
-      <div className="max-w-7xl mx-auto bg-forest text-cream-soft rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-14 lg:p-20 shadow-deep-lg border border-gold/25 relative overflow-hidden flex flex-col justify-between min-h-[680px]">
+      <div className="w-full bg-forest text-cream-soft rounded-t-[2.5rem] sm:rounded-t-[3rem] p-8 sm:p-14 lg:p-20 shadow-deep-lg border border-gold/25 relative overflow-hidden flex flex-col justify-between min-h-[680px]">
         
         {/* Background Ambient Warmth */}
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none" />

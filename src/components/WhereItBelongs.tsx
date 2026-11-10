@@ -34,7 +34,7 @@ export const WhereItBelongs = ({ onContactClick }: WhereItBelongsProps) => {
             <div className="relative h-[340px] sm:h-[460px] overflow-hidden">
               <img
                 src="/images/cafe-table-pour.jpg"
-                alt="Artisan coffee poured into CUP2EAT edible cup on an outdoor café table"
+                alt="Artisan cortado served in a CUP2EAT edible cup on a specialty coffee bar counter"
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-deep/75 via-deep/20 to-transparent" />
