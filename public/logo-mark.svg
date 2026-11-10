@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Outer Gold Ring -->
+  <circle cx="60" cy="60" r="56" stroke="#D6A84F" stroke-width="2.5" />
+  <circle cx="60" cy="60" r="51" fill="#123D32" stroke="#D6A84F" stroke-width="0.75" stroke-dasharray="2 3" />
+  
+  <!-- Subtle circular text arc or inner emblem -->
+  <g transform="translate(60, 60)">
+    <!-- Cup silhouette with bite / eat motif in golden stroke -->
+    <path d="M-18 -12 L18 -12 L12 20 C11 26 6 28 0 28 C-6 28 -11 26 -12 20 Z" fill="#D6A84F" fill-opacity="0.15" stroke="#D6A84F" stroke-width="2.5" stroke-linejoin="round" />
+    
+    <!-- Steam / Aroma swirl -->
+    <path d="M-6 -22 C-6 -28 -1 -28 -1 -34" stroke="#D6A84F" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M4 -20 C4 -26 9 -26 9 -32" stroke="#D6A84F" stroke-width="1.75" stroke-linecap="round" fill="none" opacity="0.75"/>
+    
+    <!-- Delicate bite mark on upper right rim representing edible cup -->
+    <circle cx="16" cy="-12" r="4.5" fill="#123D32" stroke="#D6A84F" stroke-width="2" />
+    
+    <!-- Horizontal wafer texture lines on cup -->
+    <line x1="-12" y1="-2" x2="12" y2="-2" stroke="#D6A84F" stroke-width="1.25" opacity="0.6"/>
+    <line x1="-10" y1="7" x2="10" y2="7" stroke="#D6A84F" stroke-width="1.25" opacity="0.6"/>
+    <line x1="-7" y1="16" x2="7" y2="16" stroke="#D6A84F" stroke-width="1.25" opacity="0.6"/>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-forest: #123D32;
+    --color-deep: #0B2822;
+    --color-cream: #F7F3E8;
+    --color-gold: #D6A84F;
+    --color-terracotta: #C76D4C;
+    --color-charcoal: #1F2420;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F7F3E8;
+    color: #1F2420;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #123D32;
+    letter-spacing: -0.02em;
+  }
+
+  /* Custom high-craft focus ring */
+  *:focus-visible {
+    outline: 2px solid #D6A84F;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F3E8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D6A84F;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B88B35;
+  }
+}
+
+@layer utilities {
+  .text-fluid-display {
+    font-size: clamp(2.75rem, 5.5vw + 0.5rem, 4.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+  }
+
+  .text-fluid-h1 {
+    font-size: clamp(2.25rem, 4.2vw + 0.5rem, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .text-fluid-h2 {
+    font-size: clamp(1.85rem, 3vw + 0.5rem, 2.75rem);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+  }
+
+  .text-fluid-h3 {
+    font-size: clamp(1.35rem, 1.8vw + 0.3rem, 1.85rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+
+  .text-measure {
+    max-width: 65ch;
+  }
+}
+
+/* Texture pattern overlay for tactile organic biscuit wafer feel */
+.wafer-pattern {
+  background-image: radial-gradient(#D6A84F 0.75px, transparent 0.75px), radial-gradient(#D6A84F 0.75px, #F7F3E8 0.75px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+  opacity: 0.15;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D6A84F 0%, #E5C075 50%, #B88B35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
