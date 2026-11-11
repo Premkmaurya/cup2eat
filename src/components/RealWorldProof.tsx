@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, Play, Heart, MessageCircle } from 'lucide-react';
+import { ArrowUpRight, Play } from 'lucide-react';
 import { InstagramIcon } from './InstagramIcon';
 import { featuredVideo, reelVideos, type VideoItem } from '../data/videos';
 import { VideoModal } from './VideoModal';
@@ -50,120 +50,84 @@ export const RealWorldProof = () => {
           </div>
         </div>
 
-        {/* Featured Lifestyle Video Thumbnail + Reel Gallery Layout */}
+        {/* Featured film with two supporting videos */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* Left: Featured Authentic Customer Video Thumbnail */}
-          <div
+          <button
+            type="button"
             onClick={() => handlePlayVideo(featuredVideo)}
-            className="lg:col-span-5 rounded-3xl overflow-hidden editorial-frame bg-cream-soft border border-cream-border flex flex-col justify-between group cursor-pointer text-left transition-all duration-300 hover:shadow-warm-lg hover:border-gold/50"
-            role="button"
-            tabIndex={0}
             aria-label={`Play featured video: ${featuredVideo.title}`}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handlePlayVideo(featuredVideo);
-              }
-            }}
+            className="group relative min-h-[360px] overflow-hidden rounded-3xl border border-cream-border bg-deep text-left shadow-warm-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-warm-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-cream lg:col-span-7 lg:min-h-[520px]"
           >
-            <div className="relative h-[360px] sm:h-[420px] overflow-hidden">
-              <img
-                src={featuredVideo.thumbnail}
-                alt={featuredVideo.title}
-                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              />
-              {/* Subtle dark gradient for text readability and cinematic depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/30 to-deep/20 transition-opacity duration-300 group-hover:opacity-90" />
-              
-              {/* Top Badge */}
-              <div className="absolute top-5 left-5 bg-cream-soft/90 backdrop-blur-md px-3.5 py-1 rounded-full text-[11px] font-heading font-semibold text-forest border border-cream-border/60">
-                {featuredVideo.category}
-              </div>
-
-              {/* Center Professional Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-forest/85 border-2 border-gold/50 text-gold flex items-center justify-center shadow-deep-lg transform transition-all duration-300 group-hover:scale-110 group-hover:bg-forest group-hover:border-gold">
-                  <Play className="w-6 h-6 sm:w-7 sm:h-7 ml-1 fill-gold/20" />
-                </div>
-              </div>
-
-              {/* Bottom Testimonial Overlay */}
-              <div className="absolute bottom-6 left-6 right-6 text-cream-soft">
-                <blockquote className="font-serif italic text-lg sm:text-xl text-white leading-snug">
-                  {featuredVideo.quote}
-                </blockquote>
-                <div className="flex items-center justify-between mt-3 text-xs font-heading">
-                  <span className="text-gold-light uppercase tracking-wider">
-                    {featuredVideo.stats}
-                  </span>
-                  <span className="text-cream/70 text-[11px]">
-                    Click to Play Video • {featuredVideo.duration}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Card Footer */}
-            <div className="p-6 bg-cream border-t border-cream-border flex items-center justify-between text-xs font-heading text-charcoal/70">
-              <div className="flex items-center gap-3">
-                <span className="flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-terracotta" /> Community Loved</span>
-                <span className="flex items-center gap-1"><MessageCircle className="w-3.5 h-3.5" /> Zero Rubbish</span>
-              </div>
-              <span className="text-forest font-semibold flex items-center gap-1 group-hover:text-gold-dark transition-colors">
-                <span>Watch Video</span>
-                <ArrowUpRight className="w-3 h-3" />
+            <video
+              src={featuredVideo.src}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <span className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/15 to-deep/10" />
+            <span className="absolute left-6 top-6 rounded-full border border-cream/30 bg-deep/45 px-3 py-1.5 text-[10px] font-heading font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm">
+              Featured film
+            </span>
+            <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-cream/60 bg-cream/90 text-forest shadow-warm-lg transition-transform duration-300 group-hover:scale-105">
+              <Play className="ml-1 h-6 w-6 fill-current" aria-hidden="true" />
+            </span>
+            <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-6 sm:p-8">
+              <span>
+                <span className="mb-2 block text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-gold-light">
+                  {featuredVideo.category}
+                </span>
+                <span className="block max-w-xl font-serif text-2xl leading-tight text-cream sm:text-3xl">
+                  {featuredVideo.title}
+                </span>
               </span>
-            </div>
-          </div>
+              <span className="hidden shrink-0 items-center gap-2 pb-1 text-xs font-heading font-semibold text-cream sm:inline-flex">
+                Play video <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </span>
+          </button>
 
-          {/* Right: Playable Video Items List (3 Horizontal Cards) */}
-          <div className="lg:col-span-7 flex flex-col justify-between gap-4">
-            {reelVideos.map((reel) => (
-              <div
-                key={reel.id}
-                onClick={() => handlePlayVideo(reel)}
-                className="bg-cream-soft hover:bg-cream rounded-2xl p-6 border border-cream-border hover:border-gold/50 transition-all duration-300 shadow-warm-sm hover:shadow-warm-md flex items-center justify-between gap-6 group cursor-pointer text-left"
-                role="button"
-                tabIndex={0}
-                aria-label={`Play video: ${reel.title}`}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handlePlayVideo(reel);
-                  }
-                }}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
+            {reelVideos.map((video) => (
+              <button
+                key={video.id}
+                type="button"
+                onClick={() => handlePlayVideo(video)}
+                aria-label={`Play video: ${video.title}`}
+                className="group grid min-h-[190px] grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] overflow-hidden rounded-2xl border border-cream-border bg-cream-soft text-left shadow-warm-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-forest/30 hover:shadow-warm-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-cream lg:min-h-0 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]"
               >
-                <div className="space-y-1.5 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-heading font-semibold uppercase tracking-wider text-forest/70 bg-cream px-2.5 py-0.5 rounded-full border border-cream-border">
-                      {reel.category}
+                <span className="relative min-h-[190px] overflow-hidden bg-cream-muted lg:min-h-[238px]">
+                  <video
+                    src={video.src}
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cream/90 text-forest shadow-warm-sm transition-transform duration-300 group-hover:scale-105">
+                      <Play className="ml-0.5 h-4 w-4 fill-current" aria-hidden="true" />
                     </span>
-                    <span className="text-xs text-charcoal/50 font-heading">
-                      {reel.stats} {reel.duration && `• ${reel.duration}`}
-                    </span>
-                  </div>
-                  <h3 className="font-serif font-bold text-lg text-forest group-hover:text-forest-light transition-colors">
-                    {reel.title}
-                  </h3>
-                  <p className="text-xs text-charcoal/70 max-w-md font-normal leading-relaxed">
-                    {reel.description}
-                  </p>
-                </div>
-
-                {/* Circular Play Button */}
-                <div className="w-12 h-12 rounded-full bg-forest text-cream-soft flex items-center justify-center shrink-0 shadow-sm border border-gold/30 group-hover:scale-105 group-hover:bg-forest-light transition-all">
-                  <Play className="w-4 h-4 ml-0.5 text-gold" />
-                </div>
-              </div>
+                  </span>
+                </span>
+                <span className="flex flex-col justify-center p-4 sm:p-5 lg:p-6">
+                  <span className="mb-2 text-[10px] font-heading font-semibold uppercase tracking-[0.16em] text-terracotta">
+                    {video.category}
+                  </span>
+                  <span className="font-serif text-lg leading-snug text-forest sm:text-xl">
+                    {video.title}
+                  </span>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-heading font-semibold text-forest/70 transition-colors group-hover:text-forest">
+                    Watch video <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                </span>
+              </button>
             ))}
-
-            {/* Transparency Note */}
-            <div className="p-4 rounded-xl bg-cream-soft/60 border border-cream-border/60 text-xs text-charcoal/65 font-normal">
-              <strong>Editorial Transparency:</strong> All footage, tasting feedback, and client demonstrations are broadcast openly on our verified Instagram page <a href="https://www.instagram.com/cup2eat/" target="_blank" rel="noopener noreferrer" className="text-forest font-semibold underline">@cup2eat</a>.
-            </div>
           </div>
-
         </div>
 
       </div>

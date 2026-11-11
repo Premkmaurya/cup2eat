@@ -1,9 +1,9 @@
-# CUP2EAT Videos Directory
+# CUP2EAT Videos
 
-Drop your client or Instagram MP4 video files into this directory:
-- `community-tasting.mp4` (Featured video on the left)
-- `customer-reactions.mp4` (Reel 1: First-time reactions to eating the cup)
-- `coffee-test.mp4` (Reel 2: The 40-Minute Hot Coffee Test)
-- `barista-service.mp4` (Reel 3: Barista Service Flow at Peak Rush)
+Replace the local MP4 files in `src/assets/videos/` to update the videos shown in the “Seen, tried and enjoyed” section:
 
-The video player automatically loads and plays these local files. If a file is omitted or fails to load, the player automatically falls back to an elegant branded preview with the video's thumbnail, description, and direct link to the Instagram demonstration on @cup2eat.
+- `video1.mp4` — featured community reactions
+- `video2.mp4` — first-time reactions to eating the cup
+- `video3.mp4` — the hot coffee test
+
+Each video plays muted and loops directly inside its card. No thumbnail files are needed. Selecting a card opens the video player with sound and playback controls.

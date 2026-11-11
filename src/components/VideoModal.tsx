@@ -96,7 +96,6 @@ export const VideoModal = ({ video, isOpen, onClose }: VideoModalProps) => {
             <video
               ref={videoRef}
               src={video.src}
-              poster={video.thumbnail}
               controls
               playsInline
               autoPlay
@@ -111,15 +110,7 @@ export const VideoModal = ({ video, isOpen, onClose }: VideoModalProps) => {
             </video>
           ) : (
             /* Graceful Placeholder / Fallback State */
-            <div className="relative w-full h-full flex flex-col justify-between p-6 sm:p-10 bg-gradient-to-t from-deep via-deep/60 to-transparent">
-              {/* Poster image background with cinematic blur */}
-              <img
-                src={video.thumbnail}
-                alt={video.title}
-                className="absolute inset-0 w-full h-full object-cover opacity-35 filter blur-sm pointer-events-none"
-              />
-              <div className="absolute inset-0 bg-deep/75 backdrop-blur-[2px]" />
-
+            <div className="relative w-full h-full flex flex-col justify-between p-6 sm:p-10 bg-deep/95">
               {/* Top Banner */}
               <div className="relative z-10 flex items-center gap-2 text-xs font-heading text-gold-light">
                 <Film className="w-4 h-4 text-gold" />
@@ -183,7 +174,6 @@ export const VideoModal = ({ video, isOpen, onClose }: VideoModalProps) => {
             {video.description}
           </p>
           <div className="flex items-center gap-4 text-gold-light shrink-0">
-            {video.duration && <span>Duration: {video.duration}</span>}
             {video.stats && <span>• {video.stats}</span>}
           </div>
         </div>
